@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.sl</groupId>
     <artifactId>cargo-mail</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>cargo-mail</name>
     <description>cargo-mail</description>
     <properties>
