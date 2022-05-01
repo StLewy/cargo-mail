@@ -11,5 +11,5 @@ phases:
       - echo $CODEBUILD_SRC_DIR
 artifacts:
   files:
-    - $CODEBUILD_SRC_DIR/cargo-mail.jar
+    - build/libs/*.jar
   discard-paths: yes
