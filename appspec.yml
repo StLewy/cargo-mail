@@ -5,7 +5,7 @@ files:
   - source: /
     destination: /home/ec2-user/server
 
-permission:
+permissions:
   - object: /
    pattern: "**"
    owner: ec2-user
