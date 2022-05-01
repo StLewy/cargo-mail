@@ -1,0 +1,13 @@
+version: 0.2
+phase:
+  build:
+    commands:
+      - echo Entered the build phase...
+      - mvn clean package
+  post_build:
+    commands:
+      -echo Build completed successfully
+artifacts:
+  files:
+    - target/cargo-mail.jar
+  discard-paths: yes
