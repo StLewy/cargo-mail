@@ -8,10 +8,9 @@ phases:
   post_build:
     commands:
       - echo Build completed successfully
-      - echo $CODEBUILD_SRC_DIR
 artifacts:
   files:
-    - build/libs/*.jar
+    - target/*.jar
     - scripts/*.sh
     - appspec.yml
   discard-paths: yes

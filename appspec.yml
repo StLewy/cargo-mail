@@ -11,19 +11,19 @@ permission:
    owner: ec2-user
    group: ec2-user
 hooks:
-#  BeforeInstall:
-#    - location: server_clear.sh
-#      timeout: 300
-#      runas: ec2-user
-#  AfterInstall:
-#    - location: server_clear.sh
-#      timeout: 300
-#      runas: ec2-user
-#  ApplicattionStart:
-#    - location: server_start.sh
-#      timeout: 300
-#      runas: ec2-user
-#  ApplicattionStop:
-#    - location: server_stop.sh
-#      timeout: 300
-#      runas: ec2-user
+  BeforeInstall:
+    - location: server_clear.sh
+      timeout: 300
+      runas: ec2-user
+  AfterInstall:
+    - location: server_clear.sh
+      timeout: 300
+      runas: ec2-user
+  ApplicattionStart:
+    - location: server_start.sh
+      timeout: 300
+      runas: ec2-user
+  ApplicattionStop:
+    - location: server_stop.sh
+      timeout: 300
+      runas: ec2-user
