@@ -3,7 +3,8 @@ package com.sl.cargomail.enumeration;
 import static com.sl.cargomail.constant.Authority.*;
 
 public enum Role {
-    ROLE_USER(USER_AUTHORITIES),
+    ROLE_LOGISTYCIAN(USER_AUTHORITIES),
+    ROLE_DRIVER(USER_AUTHORITIES),
     ROLE_MANAGER(MANAGER_AUTHORITIES),
     ROLE_ADMIN(ADMIN_AUTHORITIES),
     ROLE_SUPER_ADMIN(SUPER_ADMIN_AUTHORITIES);
