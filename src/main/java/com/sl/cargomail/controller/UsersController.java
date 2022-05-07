@@ -34,7 +34,7 @@ import static org.springframework.http.MediaType.IMAGE_JPEG_VALUE;
 
 @RestController
 @RequestMapping(value = {"/", "/user"})
-public class UserResource extends ExceptionHandling {
+public class UsersController extends ExceptionHandling {
     public static final String EMAIL_SENT = "An email with a new password was send to: ";
     public static final String USER_DELETED_SUCCESSFULLY = "User deleted successfully";
     private final UsersService usersService;
@@ -42,7 +42,7 @@ public class UserResource extends ExceptionHandling {
     private final JWTTokenProvider jwtTokenProvider;
 
     @Autowired
-    public UserResource(UsersService usersService, AuthenticationManager authenticationManager, JWTTokenProvider jwtTokenProvider) {
+    public UsersController(UsersService usersService, AuthenticationManager authenticationManager, JWTTokenProvider jwtTokenProvider) {
         this.usersService = usersService;
         this.authenticationManager = authenticationManager;
         this.jwtTokenProvider = jwtTokenProvider;
@@ -160,5 +160,12 @@ public class UserResource extends ExceptionHandling {
 
     private void authenticate(String username, String password) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+    }
+
+    @GetMapping("/findByRole")
+    public ResponseEntity<List<User>> getUsersByRole(@RequestParam("role") String role) {
+        List<User> users = usersService.findUsersByRole(role);
+        return new ResponseEntity<>(users, OK);
+
     }
 }
