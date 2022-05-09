@@ -1,12 +1,12 @@
-package com.sl.cargomail.model.domain;
+package com.sl.cargomail.model.DTO;
 
-public class Mail {
+public class MailDTO {
     private final String mailTo;
     private final String subject;
     private final String message;
     private String toCC;
 
-    public Mail(String mailTo, String subject, String message) {
+    public MailDTO(String mailTo, String subject, String message) {
         this.mailTo = mailTo;
         this.subject = subject;
         this.message = message;

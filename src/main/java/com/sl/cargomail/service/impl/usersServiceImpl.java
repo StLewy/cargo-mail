@@ -104,7 +104,7 @@ public class usersServiceImpl implements UsersService, UserDetailsService {
         user.setProfileImageUrl(getTemporaryProfileImageURL(username));
         usersRepository.save(user);
         LOGGER.info("New user: " + username + " password: " + password);
-        emailService.sendMail(firstName, email, username, password,"mail-create-account-user");
+        emailService.sendMailCreateAccount(firstName, email, username, password);
         return user;
     }
 
@@ -170,7 +170,7 @@ public class usersServiceImpl implements UsersService, UserDetailsService {
         usersRepository.save(user);
         LOGGER.info("username: " + username + " password: " + password);
         saveProfileImage(user, profileImage);
-        emailService.sendMail(firstName, email, username, password,"mail-create-account-user");
+        emailService.sendMailCreateAccount(firstName, email, username, password);
         return user;
     }
 
@@ -209,7 +209,7 @@ public class usersServiceImpl implements UsersService, UserDetailsService {
             String password = generatePassword();
             user.setPassword(encodePassword(password));
             usersRepository.save(user);
-            emailService.sendMail(user.getFirstName(),user.getEmail(), user.getUsername(), password, "mail-reset-password");
+            emailService.sendMailCreateAccount(user.getFirstName(),user.getEmail(), user.getUsername(), password);
         }
     }
 
